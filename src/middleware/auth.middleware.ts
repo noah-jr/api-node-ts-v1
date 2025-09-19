@@ -24,3 +24,6 @@ const authMiddleware = (
     return res.status(401).json({ message: "Not Authorized" });
   }
 };
+
+
+export {authMiddleware}

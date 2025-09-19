@@ -6,7 +6,6 @@
     "node": ">=20.0.0"
   },
   "main": "dist/main.js",
-  "type": "module",
   "scripts": {
     "dev": "tsx watch src/main.ts",
     "build": "tsc",
@@ -30,10 +29,16 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@prisma/client": "6.16.2",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2"
-  }
+  },
+  "pnpm": {
+  "onlyBuiltDependencies": [
+    "@prisma/client"
+  ]
+}
 }

@@ -1,21 +1,4 @@
-version: '3.8'
 services:
-  api:
-    build: .
-    container_name: api-api-docker-pg
-    command: sh -c "npm install && npx tsc && node dist/index.js"
-    ports:
-      - '3000:3000'
-    environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
-      - DB_NAME=api_db
-    depends_on:
-      - db
-    volumes:
-      - .:/app
   db:
     image: postgres:13
     container_name: postgres-db
@@ -27,3 +10,6 @@ services:
       - '5432:5432'
     volumes:
       - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
